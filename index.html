@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>물빛 일기록</title>
+    <!-- CSS 스타일 시트 링크 -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- 반응형 메타태그 추가 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <!-- 로고 이미지 등 어플 제목과 로고를 표시하는 부분 -->
+        <h1>키워드 감성 일기장</h1>
+        <img src="logo.png" alt="로고 이미지">
+    </header>
+
+    <main>
+        <section id="upload-section">
+            <!-- 이미지 업로드 버튼과 프리뷰 영역 -->
+            <input type="file" id="image-upload" accept="image/*">
+            <div id="image-preview">
+                <img id="preview-image" src="" alt="업로드된 이미지">
+            </div>
+        </section>
+
+        <section id="mood-section">
+            <!-- 기분 선택 부분 -->
+            <h2>오늘의 기분</h2>
+            <div class="mood-list">
+                <!-- 사용자가 선택할 수 있는 기분 버튼 -->
+                <button class="mood-button" onclick="selectMood('좋음')">좋음</button>
+                <button class="mood-button" onclick="selectMood('나쁨')">나쁨</button>
+                <button class="mood-button" onclick="selectMood('보통')">보통</button>
+            </div>
+        </section>
+
+        <section id="diary-section">
+            <!-- 일기 작성 창 -->
+            <h2>나만의 일기</h2>
+            <div class="keyword-input-container">
+                <!-- 키워드 입력 창 -->
+                <input type="text" id="keyword-input" placeholder="오늘의 감상을 키워드로 입력해보세요...">
+                <!-- 키워드 입력 버튼 -->
+                <button id="add-keyword-button" onclick="addKeyword()">추가</button>
+            </div>
+            <!-- 입력한 키워드가 표시될 영역 -->
+            <div id="keyword-tags"></div>
+            <!-- 일기를 입력할 텍스트 창 -->
+            <textarea id="diary-text" placeholder="오늘의 감상을 자유롭게 적어보세요..."></textarea>
+            <!-- 일기 생성 버튼 -->
+            <button id="create-button" onclick="createDiary()">일기 생성하기</button>
+        </section>
+
+        <section id="share-section">
+            <!-- 일기 공유 버튼 -->
+            <button id="share-button" onclick="shareDiary()">일기 공유하기</button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- 저작권 정보 또는 추가적인 정보를 표시하는 부분 -->
+        <p>저작권 © 2023 물빛 일기록</p>
+    </footer>
+
+    <!-- 자바스크립트 파일 링크 -->
+    <script src="script.js"></script>
+</body>
+</html>
